@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { headerComponent} from './header.component';
 import { FooterComponent} from './Footer.component';
 import { ButtnComponent } from './buttn/buttn.component';
+import { MovieListComponent } from './movie-list/movie-list.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ButtnComponent } from './buttn/buttn.component';
     AppComponent,
     headerComponent,
     FooterComponent,
-    ButtnComponent
+    ButtnComponent,
+    MovieListComponent,
   ],
   imports: [
     BrowserModule, FormsModule
