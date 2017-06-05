@@ -7,13 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ButtnComponent implements OnInit {
 txt:  string;
+ _buttonTxt: String;
+
   constructor() { 
     this.txt = 'original value . ';
+    this.buttonTxt = 'type below to change';
   }
 
   ngOnInit() {
   }
 
+  get buttonTxt(){
+    return this._buttonTxt;
+  }
+  set buttonTxt(val){
+    this._buttonTxt = val;
+  }
 
 changeText(){
   if (this.txt == 'text changed'){
