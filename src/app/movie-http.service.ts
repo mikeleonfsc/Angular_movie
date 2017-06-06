@@ -10,11 +10,12 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class MovieHTTPService {
-  private moviesUrl = 'http://localhost:8080/movies'; 
+  // private moviesUrl = 'http://localhost:8080/movies'; 
+  private moviesUrl = 'api/movies'; 
   constructor(private http: Http) { }
 
-  getMovies():Observable<Movie[]> {
-    return this.http.get(this.moviesUrl).map(response => response.json() || {});
+  getMovies(): Promise<Movie[]> {
+    return this.http.get(this.moviesUrl).toPromise().then(response => response.json().data as Movie[]).catch(this.handleError);
    
   }
   private extractData(res: Response) {

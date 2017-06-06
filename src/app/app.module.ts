@@ -3,6 +3,10 @@ import { NgModule,  } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule  } from '@angular/http';
 
+// Imports for loading & configuring the in-memory web api
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+
 import { AppComponent } from './app.component';
 import { headerComponent} from './header.component';
 import { FooterComponent} from './Footer.component';
@@ -21,9 +25,13 @@ import { MovieListHTTPComponent } from './movie-list-http/movie-list-http.compon
     MovieListHTTPComponent,
     ],
   imports: [
-    BrowserModule, FormsModule, HttpModule, JsonpModule
+    BrowserModule,
+    FormsModule, 
+    HttpModule, 
+    JsonpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
   ],
-  providers: [],
+  providers: [MovieListHTTPComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
