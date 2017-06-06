@@ -6,6 +6,7 @@ import { HttpModule, JsonpModule  } from '@angular/http';
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { headerComponent} from './header.component';
@@ -30,6 +31,7 @@ import { MovieListHTTPComponent } from './movie-list-http/movie-list-http.compon
     HttpModule, 
     JsonpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
+    AppRoutingModule
   ],
   providers: [MovieListHTTPComponent],
   bootstrap: [AppComponent]
