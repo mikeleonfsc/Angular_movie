@@ -14,7 +14,7 @@ export class MovieHTTPService {
   constructor(private http: Http) { }
 
   getMovies():Observable<Movie[]> {
-    return this.http.get(this.moviesUrl).map(response => response.json());
+    return this.http.get(this.moviesUrl).map(response => response.json() || {});
    
   }
   private extractData(res: Response) {
