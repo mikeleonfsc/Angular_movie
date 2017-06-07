@@ -5,7 +5,7 @@
 <div id="movieDiv2">
   <p *ngFor="let mov of movieHTTPList">
      {{mov.id}} {{mov.name}} {{mov.rating}} {{mov.watchAgain}}
-    <a [routerLink]="['/detail', 1]">Details</a>
+    <a [routerLink]="['/detail', mov.rating]">Details</a>
     
   </p>
  
