@@ -3,10 +3,19 @@
 </p>
  
 <div id="movieDiv2">
-  <p *ngFor="let mov of movieHTTPList">
-     {{mov.id}} {{mov.name}} {{mov.rating}} {{mov.watchAgain}}
+  <ul>
+  <li *ngFor="let mov of movieHTTPList" (click)="onSelect(mov)"  [class.selected]="mov === selectedHero">
+     
+<span class="badge">{{mov.id}}</span>
+<span>{{mov.name}}</span>
+
+     {{mov.id}} {{mov.rating}} {{mov.watchAgain}} sdf
     <a [routerLink]="['/detail', mov.rating]">Details</a>
-    
-  </p>
- 
+    </li>
+   </ul>
+ </div>
+
+<div id="selectedMovieDiv" *ngIf="selectedMovie">
+<p>selected:</p>
+ <p>{{selectedMovie.name}}<p>
 </div>
