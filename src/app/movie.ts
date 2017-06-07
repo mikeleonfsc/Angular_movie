@@ -1,8 +1,10 @@
 export class Movie {
+    id:Number;
     name: String;
     rating: number;
     watchAgain: boolean
-    constructor(name, rating, watchAgain){
+    constructor(id, name, rating, watchAgain){
+        this.id = id;
         this.name = name;
         this.rating = rating;
         this.watchAgain = watchAgain;

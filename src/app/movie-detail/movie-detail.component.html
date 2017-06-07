@@ -1,0 +1,10 @@
+<div *ngIf="movie">
+<p>
+  movie-detail for {{movie.name}}
+</p>
+<p>Rating: {{movie.rating}}
+</p>
+<p>Watch again <span *ngIf="movie.watchAgain; else printNo">Yes</span>
+<ng-template #printNo>No</ng-template>
+</div>
+ 

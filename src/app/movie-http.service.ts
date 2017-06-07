@@ -18,6 +18,19 @@ export class MovieHTTPService {
     return this.http.get(this.moviesUrl).toPromise().then(response => response.json().data as Movie[]).catch(this.handleError);
    
   }
+
+  getMovie(id:number): Promise<Movie> {
+    console.info('attemptin move for id: '+id);
+    
+    
+    const url = `${this.moviesUrl}/${id}`;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json().data as Movie)
+      .catch(this.handleError);
+
+  }
+
   private extractData(res: Response) {
     let body = res.json();
     return body.data;

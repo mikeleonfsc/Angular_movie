@@ -15,6 +15,7 @@ import { ButtnComponent } from './buttn/buttn.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieListHTTPComponent } from './movie-list-http/movie-list-http.component';
 import { HomeComponent } from './home/home.component';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { HomeComponent } from './home/home.component';
     MovieListComponent,
     MovieListHTTPComponent,
     HomeComponent,
+    MovieDetailComponent,
     ],
   imports: [
     BrowserModule,
