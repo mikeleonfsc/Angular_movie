@@ -9,8 +9,8 @@ export class MovieService {
   constructor() { }
 
 getMovies(){
-  let movieList = [{name:"Invincable", rating:2, watchAgain:false},
-    { name: "Sound of Music", rating:2, watchAgain:false }
+  let movieList = [{id:1, name:"Invincable", rating:2, watchAgain:false},
+    {id:2, name: "Sound of Music", rating:2, watchAgain:false }
     ];
   return movieList;
 }

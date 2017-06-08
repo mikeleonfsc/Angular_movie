@@ -11,6 +11,9 @@
 
      {{mov.id}} {{mov.rating}} {{mov.watchAgain}} sdf
     <a [routerLink]="['/detail', mov.rating]">Details</a>
+    <br/>
+    <p>this is a child component</p>
+    <app-movie-child [movie]="mov"></app-movie-child>
     </li>
    </ul>
  </div>
