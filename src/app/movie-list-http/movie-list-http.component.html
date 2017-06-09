@@ -4,9 +4,9 @@
  
 <div id="movieDiv2">
   <ul>
-  <li *ngFor="let mov of movieHTTPList" (click)="onSelect(mov)"  [class.selected]="mov === selectedHero">
-     
-<span class="badge">{{mov.id}}</span>
+  <li *ngFor="let mov of movieHTTPList" on-mouseover="onSelect(mov)" (click)="onSelect(mov)" [class.selected]="mov === selectedHero">
+    <!-- this can be (click)=="onSelect(mov)-->
+<span class="badge">hover over for details{{mov.id}}</span>
 <span>{{mov.name}}</span>
 
      {{mov.id}} {{mov.rating}} {{mov.watchAgain}} sdf
