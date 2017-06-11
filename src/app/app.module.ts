@@ -17,6 +17,7 @@ import { MovieListHTTPComponent } from './movie-list-http/movie-list-http.compon
 import { HomeComponent } from './home/home.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MovieChildComponent } from './movie-child/movie-child.component';
+import { AddMovieComponent } from './add-movie/add-movie.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { MovieChildComponent } from './movie-child/movie-child.component';
     HomeComponent,
     MovieDetailComponent,
     MovieChildComponent,
+    AddMovieComponent,
     ],
   imports: [
     BrowserModule,

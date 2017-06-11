@@ -11,6 +11,8 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class MovieHTTPService {
   // private moviesUrl = 'http://localhost:8080/movies'; 
+  private headers = new Headers({'Content-Type': 'application/json'});
+  
   private moviesUrl = 'api/movies'; 
   constructor(private http: Http) { }
 
@@ -22,13 +24,20 @@ export class MovieHTTPService {
   getMovie(id:number): Promise<Movie> {
     console.info('attemptin move for id: '+id);
     
-    
     const url = `${this.moviesUrl}/${id}`;
     return this.http.get(url)
       .toPromise()
       .then(response => response.json().data as Movie)
       .catch(this.handleError);
 
+  }
+  create(id: number, name:String, rating:Number, watchAgain:String):Promise<Movie>{
+    console.log('adding...');
+     return this.http
+      .post(this.moviesUrl, JSON.stringify({id:id, name: name, rating: rating, watchAgain: watchAgain}), {headers: this.headers})
+      .toPromise()
+      .then(res => res.json().data as Movie)
+      .catch(this.handleError);
   }
 
   private extractData(res: Response) {
