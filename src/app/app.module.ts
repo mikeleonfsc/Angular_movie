@@ -2,6 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule,  } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule  } from '@angular/http';
+ 
+import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MdSelectModule} from '@angular/material';
+
+
 
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -35,9 +40,11 @@ import { AddMovieComponent } from './add-movie/add-movie.component';
     ],
   imports: [
     BrowserModule,
+    NoopAnimationsModule,
     FormsModule, 
     HttpModule, 
     JsonpModule,
+    MdSelectModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule
   ],
