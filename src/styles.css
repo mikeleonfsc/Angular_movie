@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* this is for Material, some elements need themes, it can be any */
 @import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 * {
 font-family: Verdana, Geneva, Tahoma,  sans-serif;
