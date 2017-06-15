@@ -13,6 +13,7 @@ export class AddMovieComponent implements OnInit {
 
   _movie:Movie;
   _id:number = 20;
+  _rating:string;
  
   constructor(private movieService:MovieHTTPService) { }
 
@@ -25,6 +26,7 @@ export class AddMovieComponent implements OnInit {
     this.movieService.create(this._id, name+' '+ this._id, rating, watchAgain )
       .then(movie => {
         this._id+= 1;
+        console.log('rating= '+ rating);
         console.log('movie= '+ movie);
         this._movie = movie;
         

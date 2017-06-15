@@ -2,18 +2,18 @@
 
 <div>
   <label>Movie name:</label> <input #movieName />
-  <label>Rating:</label> <input #movieRating />
+ 
   <label>Watch Again:</label> <input #movieWatchAgain />
-  <div>
-  <md-select placeholder="Rating" floatPlaceholder="never">
-    <md-option [value]="'GB'">1</md-option>
-    <md-option [value]="'US'">2</md-option>
-    <md-option [value]="'CA'">3</md-option>
+  
+  <md-select placeholder="Rating" #movieRating>
+    <md-option [value]="'1'">1</md-option>
+    <md-option [value]="'2'">2</md-option>
+    <md-option [value]="'3'">3</md-option>
   </md-select>
-   <div>
-  <button (click)="add(movieName.value, movieRating.value, movieWatchAgain.value);">
+  
+  <button (click)="add(movieName.value, movieRating.selected.value, movieWatchAgain.value);">
     Add
   </button>
   <p *ngIf="_movie">
-    '{{_movie.name}}' added with ID: {{_movie.id}}
+    '{{_movie.name}}' added with ID: {{_movie.id}} rated:{{_movie.rating}}
 </div>
