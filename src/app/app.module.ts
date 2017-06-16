@@ -3,8 +3,8 @@ import { NgModule,  } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule  } from '@angular/http';
  
-import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MdSelectModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MdSelectModule, MdRadioModule} from '@angular/material';
 
 
 
@@ -40,7 +40,8 @@ import { AddMovieComponent } from './add-movie/add-movie.component';
     ],
   imports: [
     BrowserModule,
-    NoopAnimationsModule,
+    BrowserAnimationsModule,
+    MdRadioModule,
     FormsModule, 
     HttpModule, 
     JsonpModule,

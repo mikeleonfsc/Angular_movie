@@ -1,9 +1,19 @@
 <h2>Add Movie</h2>
 
+
+
 <div>
-  <label>Movie name:</label> <input #movieName />
+  <label>Movie name:</label> <input #movieName  />
+
  
-  <label>Watch Again:</label> <input #movieWatchAgain />
+
+
+   <md-radio-group   [(ngModel)]="_watchAgain" >
+
+      <md-radio-button   value="true" >Yes</md-radio-button>
+      <md-radio-button  value="false">No</md-radio-button>
+      
+    </md-radio-group>
   
   <md-select placeholder="Rating" #movieRating>
     <md-option [value]="'1'">1</md-option>
@@ -11,9 +21,9 @@
     <md-option [value]="'3'">3</md-option>
   </md-select>
   
-  <button (click)="add(movieName.value, movieRating.selected.value, movieWatchAgain.value);">
+  <button (click)="add(movieName.value, movieRating.selected.value);">
     Add
   </button>
   <p *ngIf="_movie">
-    '{{_movie.name}}' added with ID: {{_movie.id}} rated:{{_movie.rating}}
+    '{{_movie.name}}' added with ID: {{_movie.id}} rated:{{_movie.rating}} watch again: {{_movie.watchAgain}}
 </div>

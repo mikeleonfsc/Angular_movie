@@ -31,7 +31,7 @@ export class MovieHTTPService {
       .catch(this.handleError);
 
   }
-  create(id: number, name:String, rating:Number, watchAgain:String):Promise<Movie>{
+  create(id: number, name:String, rating:Number, watchAgain:boolean):Promise<Movie>{
     console.log('adding...');
      return this.http
       .post(this.moviesUrl, JSON.stringify({id:id, name: name, rating: rating, watchAgain: watchAgain}), {headers: this.headers})
