@@ -11,13 +11,17 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class MovieHTTPService {
   // private moviesUrl = 'http://localhost:8080/movies'; 
-  private headers = new Headers({'Content-Type': 'application/json'});
+  //private moviesUrl = 'api/movies'; 
+  //When trying to hit live service, need to remove the InMemoryWebApiModule.forRoot(InMemoryDataService) from the app.module.ts 
+  //and ad dit in for memory API
+
+  private moviesUrl = 'http://172.28.2.251:3000/wines'; 
+  private headers = new Headers({'Content-Type': 'application/json','Access-Control-Allow-Origin': '*'});
   
-  private moviesUrl = 'api/movies'; 
   constructor(private http: Http) { }
 
   getMovies(): Promise<Movie[]> {
-    return this.http.get(this.moviesUrl).toPromise().then(response => response.json().data as Movie[]).catch(this.handleError);
+    return this.http.get(this.moviesUrl).toPromise().then(response => response.json() as Movie[]).catch(this.handleError);
    
   }
 
@@ -34,9 +38,9 @@ export class MovieHTTPService {
   create(id: number, name:String, rating:Number, watchAgain:boolean):Promise<Movie>{
     console.log('adding...');
      return this.http
-      .post(this.moviesUrl, JSON.stringify({id:id, name: name, rating: rating, watchAgain: watchAgain}), {headers: this.headers})
+     .post(this.moviesUrl, JSON.stringify({name: name, rating: rating, watchAgain: watchAgain,  updated_at:new Date(2014, 3, 19)}), {headers: this.headers})
       .toPromise()
-      .then(res => res.json().data as Movie)
+      .then(res => res.json() as Movie)
       .catch(this.handleError);
   }
 

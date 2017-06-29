@@ -46,7 +46,7 @@ import { AddMovieComponent } from './add-movie/add-movie.component';
     HttpModule, 
     JsonpModule,
     MdSelectModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    //InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule
   ],
   providers: [MovieListHTTPComponent],
