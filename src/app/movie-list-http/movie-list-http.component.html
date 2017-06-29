@@ -9,7 +9,7 @@
 <span class="badge">hover over for details{{mov.id}}</span>
 <span>{{mov.name}}</span>
 
-     {{mov.id}} {{mov.rating}} {{mov.watchAgain}} sdf
+{{mov.id}} {{mov.rating}} {{mov.watchAgain}} {{mov.updated_at}} 
     <a [routerLink]="['/detail', mov.rating]">Details</a>
     <br/>
     <p>this is a child component</p>

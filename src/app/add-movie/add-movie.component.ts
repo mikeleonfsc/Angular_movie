@@ -24,7 +24,7 @@ export class AddMovieComponent implements OnInit {
   add(name, rating, watchAgain): void {
     name = name.trim();
     if (!name) { return; }
-    this.movieService.create(this._id, name+' '+ this._id, rating, this._watchAgain ) //for some reason cant get radio fgroup to get value
+    this.movieService.create(this._id, name, rating, this._watchAgain ) //for some reason cant get radio fgroup to get value
       .then(movie => {
         this._id+= 1;
         console.log('rating= '+ rating);
